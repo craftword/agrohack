@@ -2,6 +2,8 @@ const express = require('express')
 const next = require('next')
 const apiRouter = require('./route')
 const cors = require('cors')
+const mongoose = require('mongoose')
+const db = mongoose.connect('mongodb+srv://craftword:<password>@cluster0-ensz3.mongodb.net/test?retryWrites=true')
 
 
 const dev = process.env.NODE_ENV !== 'production'
