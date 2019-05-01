@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
 
-const url = 'mongodb+srv://craftword:godword20@cluster0-jhxt2.mongodb.net/test?retryWrites=true'
+const url = 'mongodb://heroku_480h8914:h1otd3iqagn9g0hp4bocblh00s@ds243441.mlab.com:43441/heroku_480h8914'
 var db = mongoose.connect(url, {useNewUrlParser: true},function(err){
     if(err){
       console.log('Some problem with the connection ' +err)   
