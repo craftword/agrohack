@@ -7,11 +7,13 @@ import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
-const styles = {
+const styles = theme => ({
   root: {
     width: 100,
+    margin: `${theme.spacing.unit}px auto`,
+    padding: theme.spacing.unit * 2,
   },
-};
+});
 
 class SimpleBottomNavigation extends React.Component {
   state = {

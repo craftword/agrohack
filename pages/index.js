@@ -1,26 +1,23 @@
 import React from 'react';
-import {
-  Typography,
+import Layout from 'material-ui-layout';
+import ButtonAppBar from "../components/AppHeader"
+import SimpleBottomNavigation from "../components/AppFooter"
+import Main from "../components/main"
 
-} from '@material-ui/core';
-
-//import { Carousel } from 'react-responsive-carousel';
-import ButtonAppBar from '../components/AppHeader';
-import SimpleBottomNavigation from '../components/AppFooter';
-// carousel styles
-//import 'style!css!react-responsive-carousel/lib/styles/carousel.css';
-
-class HomePage extends React.Component {
-	render() {
-		return (
-      <React.Fragment>
-        <ButtonAppBar />       
-          <Typography variant="display2"> Welcome to Agro Mart </Typography>
-          <hr />
-        <SimpleBottomNavigation /> 
-      </React.Fragment>
-      );
+  class AppLayout extends React.Component {
+    render(){
+      const {children} = this.props;
+      return(
+           <Layout
+            appBarContent={<ButtonAppBar/>}
+            footerContent={<SimpleBottomNavigation />}
+            stickyFooter
+            >
+            <Main />
+            </Layout>
+        )
+      }
     }
-  }
   
-  export default HomePage;
+
+  export default AppLayout;
