@@ -61,15 +61,14 @@ const styles = theme => ({
 
 class ListItems extends React.Component {
    constructor(props) {
-    super(props);
-    s
+    super(props);  
     this.state = {
         rows:[],
     };
     this.removeItem = this.removeItem.bind(this);  }
 
   static async getInitialProps() {
-    const res = await fetch('http://localhost:3000/api/products')
+    const res = await fetch('http://localhost:3030/api/products')
     const rows = await res.json()
     return { rows }
   }
@@ -89,7 +88,7 @@ removeItem(itemIndex) {
     
   render() {
     const { classes } = this.props;
-     const { itemname, rows} = this.state;
+     const { rows} = this.state;
      //console.log(rows);
     return (
       <div>
@@ -108,7 +107,10 @@ removeItem(itemIndex) {
                       <Table className={classes.table}>
                           <TableHead>
                               <TableRow>
-                                  <TableCell>Available Product Items</TableCell>
+                                  <TableCell>Phone Number</TableCell>
+                                  <TableCell>Product</TableCell>
+                                  <TableCell>Quantity</TableCell>
+                                  <TableCell>Price</TableCell>
                                   <TableCell align="right"></TableCell>                        
                               </TableRow>
                           </TableHead>
@@ -116,9 +118,18 @@ removeItem(itemIndex) {
                             
                             {rows.map(row => (
                                 
-                                  <TableRow key={row.index}>
+                                  <TableRow key={row.id}>
                                   <TableCell component="th" scope="row">
-                                      {row.value}
+                                      {row.phoneNumber}
+                                  </TableCell>
+                                  <TableCell component="th" scope="row">
+                                      {row.product}
+                                  </TableCell>
+                                  <TableCell component="th" scope="row">
+                                      {row.quantity}
+                                  </TableCell>
+                                  <TableCell component="th" scope="row">
+                                      {row.price}
                                   </TableCell>
                                   <TableCell align="right">
                                       <IconButton aria-label="Delete" className={classes.margin} onClick={this.removeItem}>

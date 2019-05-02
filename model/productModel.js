@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const productModel = new Schema({
     phoneNumber: { type: String   },
     product: { type: String },
-    quality: { type:String },
+    quantity: { type:String },
     price: { type:String },
     
 }, { timestamps: { createdAt: 'created_at' } })
