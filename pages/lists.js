@@ -68,7 +68,7 @@ class ListItems extends React.Component {
     this.removeItem = this.removeItem.bind(this);  }
 
   static async getInitialProps() {
-    const res = await fetch('http://localhost:3030/api/products')
+    const res = await fetch('http://localhost:3000/api/products')
     const rows = await res.json()
     return { rows }
   }
