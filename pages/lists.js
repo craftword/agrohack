@@ -20,6 +20,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import fetch from 'isomorphic-unfetch'
 
 
+ const PORT = process.env.PORT || 3000;
+
 const styles = theme => ({
   root: {
     width: '100%',
@@ -68,7 +70,7 @@ class ListItems extends React.Component {
     this.removeItem = this.removeItem.bind(this);  }
 
   static async getInitialProps() {
-    const res = await fetch('http://localhost:3000/api/products')
+    const res = await fetch(`http://localhost:${ PORT }/api/products`)
     const rows = await res.json()
     return { rows }
   }
