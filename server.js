@@ -18,8 +18,8 @@ var db = mongoose.connect(url, {useNewUrlParser: true},function(err){
 });
 
 
-//const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev:false })
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
 const handle = app.getRequestHandler()
 
 //const rows = [] 
