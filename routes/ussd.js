@@ -42,7 +42,7 @@ exports.ussd = function(req, res) {
          {
              phoneNumber: phoneNumber, 
              product: options[1],
-             quality: options[2],
+             quantity: options[2],
              price:options[3],
         });
         product.save();

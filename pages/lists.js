@@ -54,7 +54,7 @@ const styles = theme => ({
     margin: theme.spacing.unit,
   },
   table: {
-    minWidth: 300,
+    minWidth: 500,
   },
   margin: {
     margin: theme.spacing.unit,
@@ -96,7 +96,7 @@ removeItem(itemIndex) {
       <div>
         <ButtonAppBar />
         <Grid container spacing={24}>
-            <Grid item xs={3}>
+            <Grid item xs={2}>
                 
             </Grid>
             <Grid item xs={7}>
@@ -105,6 +105,7 @@ removeItem(itemIndex) {
                   <Typography gutterBottom variant="h5">
                     List Of Available Product
                   </Typography>
+                  <hr />
                   <Paper className={classes.root}>
                       <Table className={classes.table}>
                           <TableHead>

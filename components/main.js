@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Link from 'next/link';
+
 
 
 const styles = {
@@ -13,18 +16,22 @@ const styles = {
         backgroundImage: `url("/static/bkgrd.jpg")`
     },
     homeTxt: {
-      color:"#ffffff"
-    }
+      color:"#ff0000"
+    },
+    button: {
+    textAlign: 'center',
+    margin: 'auto',
+    padding:'auto',
+    
+  },
+    
 };
 
 export default class Main extends React.Component{
     render(){
         return(      
-            <Grid style={styles.paperContainer} container spacing={24}>
-              <Grid item xs={2}>
-                
-              </Grid>
-              <Grid item xs={8} container
+        <Grid style={styles.paperContainer} container spacing={24} alignItems="center">
+            <Grid item xs={12} container
                   direction="column"
                   justify="center"
                   alignItems="center"
@@ -33,14 +40,28 @@ export default class Main extends React.Component{
                   AGRO MARKETING APP 
                 </Typography>
                 <Typography style={styles.homeTxt}>
-                  The App is meant to solve the problem of food waste in Nigeria
-                  Since most farmers are in rural in Nigeria, the app connect the farmers with 
-                  potential buyers across the country. 
-                </Typography>  
-                
+                    CONNECTING FARMERS TO THE PEOPLE
+                </Typography>
+                <Grid item xs container direction="column" spacing={16} alignItems="center" style={styles.button}>
+                    <Grid item xs>                        
+                        <Link href="/about">
+                            <Button variant="contained"  color="secondary" >
+                                Get Started
+                            </Button>
+                        </Link>
+                       
+                        <Link href="/lists">
+                            <Button variant="contained"  color="primary" >
+                                Get Farmers 
+                            </Button>
+                        </Link>
+                    </Grid>
+                    
+                </Grid>      
+              </Grid>
+            
 
-              </Grid>  
-            </Grid>
+        </Grid>
           
             
            

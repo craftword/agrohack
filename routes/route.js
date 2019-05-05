@@ -24,15 +24,14 @@ productRouter.use('/:id', (req, res, next) => {
     })
 })
 productRouter
-    .get('/:id', (req, res) => {
-        return res.json( req.product )
-    })
-    .put('/:id', (req, res) =>{
-        
-        Object.keys(req.body).map(key=>{
-            req.product[key] = req.body[key]
+    .delete((req,res)=>{
+        req.product.remove(err => {
+            if(err){
+                res.status(500).send(err)
+            }
+            else{
+                res.status(204).send('removed')
+            }
         })
-        req.product.save()
-        res.json(req.product)
-    })
+    })//delete
 module.exports = productRouter;
