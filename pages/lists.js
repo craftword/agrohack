@@ -118,11 +118,12 @@ removeItem(itemIndex) {
                   </Paper>
                 </div>
                  
-                    <SimpleBottomNavigation /> 
+                   
                 
               </div>
             </Grid>
         </Grid>
+         <SimpleBottomNavigation /> 
       </div>
     )
   }
