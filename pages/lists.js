@@ -25,39 +25,11 @@ import fetch from 'isomorphic-unfetch'
 const styles = theme => ({
   root: {
     width: '100%',
-    maxWidth: 800,
-    backgroundColor: theme.palette.background.paper,
-  },
-  chip: {
-    marginRight: theme.spacing.unit,
-  },
-  section1: {
-    margin: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 2}px`,
-  },
-  section2: {
-    margin: theme.spacing.unit * 2,
-  },
-   section3: {
-    margin: `${theme.spacing.unit * 6}px ${theme.spacing.unit * 2}px ${theme.spacing.unit * 2}px`,
-    padding:theme.spacing.unit,
-        
-  },
-  
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  input: {
-    margin: theme.spacing.unit,
-  },
-   button: {
-    margin: theme.spacing.unit,
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
   },
   table: {
-    minWidth: 500,
-  },
-  margin: {
-    margin: theme.spacing.unit,
+    minWidth: 700,
   },
 });
 
@@ -91,7 +63,7 @@ removeItem(itemIndex) {
   render() {
     const { classes } = this.props;
      const { rows} = this.state;
-     //console.log(rows);
+     console.log(rows);
     return (
       <div>
         <ButtonAppBar />
@@ -101,7 +73,7 @@ removeItem(itemIndex) {
             </Grid>
             <Grid item xs={7}>
               <div className={classes.root}>
-                <div className={classes.section2}>
+                <div>
                   <Typography gutterBottom variant="h5">
                     List Of Available Product
                   </Typography>
@@ -120,18 +92,18 @@ removeItem(itemIndex) {
                           <TableBody>
                             
                             {rows.map(row => (
-                                
-                                  <TableRow key={row.id}>
+                                 
+                              <TableRow key={row.id}>
                                   <TableCell component="th" scope="row">
                                       {row.phoneNumber}
                                   </TableCell>
-                                  <TableCell component="th" scope="row">
+                                  <TableCell >
                                       {row.product}
                                   </TableCell>
-                                  <TableCell component="th" scope="row">
+                                  <TableCell >
                                       {row.quantity}
                                   </TableCell>
-                                  <TableCell component="th" scope="row">
+                                  <TableCell >
                                       {row.price}
                                   </TableCell>
                                   <TableCell align="right">
@@ -139,15 +111,15 @@ removeItem(itemIndex) {
                                           <DeleteIcon fontSize="small"/>
                                       </IconButton>                            
                                   </TableCell>                       
-                                  </TableRow>
+                               </TableRow>
                               ))}
                           </TableBody>
                       </Table>
                   </Paper>
                 </div>
-                 <div className={classes.section3}>
+                 
                     <SimpleBottomNavigation /> 
-                </div>
+                
               </div>
             </Grid>
         </Grid>
